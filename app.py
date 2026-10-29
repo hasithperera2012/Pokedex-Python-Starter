@@ -15,14 +15,22 @@ data = json.load(pokedex)
 
 # Add a language choice feature and print the pokemons name based on the user input
 
-def names():
-    language = input("Enter a language: ").lower()
-    for pokemon in data:    
-        pok_names = pokemon["name"][language]
-        print(pok_names)
-names()
+# def names():
+#     language = input("Enter a language: ").lower()
+#     for pokemon in data:    
+#         pok_names = pokemon["name"][language]
+#         print(pok_names)
+# names()
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
+
+def names():
+    pke_type = input("Enter a pokemon type: ").lower()
+    for pokemon in data:
+        for current_type in pokemon["type"]:
+            if current_type.lower() == pke_type:
+                print(pokemon["name"]["english"])
+names()
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
