@@ -25,10 +25,10 @@ data = json.load(pokedex)
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 
 def names():
-    pke_type = input("Enter a pokemon type: ").lower()
+    pokemon_type = input("Enter a pokemon type: ").lower()
     for pokemon in data:
-        for current_type in pokemon["type"]:
-            if current_type.lower() == pke_type:
+        for the_type in pokemon["type"]:
+            if the_type.lower() == pokemon_type:
                 print(pokemon["name"]["english"])
 names()
 
