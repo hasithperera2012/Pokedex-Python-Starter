@@ -34,16 +34,21 @@ data = json.load(pokedex)
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
-def pokemon():
-    user_input = input("Write a pokemon name: ").lower()
-    input_len = len(user_input)
-    for pokemon in data:
-        for name in pokemon["name"]:
-            for i in range(input_len):
-                if user_input[i].lower() in name[i].lower():
-                    print(pokemon["name"]["english"])
-pokemon()
+# def pokemon():
+#     user_input = input("Write a pokemon name: ").lower()
+#     input_len = len(user_input)
+#     for pokemon in data:
+#         for name in pokemon["name"]:
+#             for i in range(input_len):
+#                 if user_input[i].lower() in name[i].lower():
+#                     print(pokemon["name"]["english"])
+# pokemon()
 
-
+def find_pokemon():
+  user_input = input("Write a pokemon name: ").lower()
+  for pokemon in data:
+    if user_input in pokemon["name"].lower():
+      print(pokemon["name"])
+find_pokemon()
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
